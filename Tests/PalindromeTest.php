@@ -23,13 +23,28 @@ class PalindromeTest extends TestCase
     /*
     Quand ce n'est pas un palindrome
     */
-    public function testMiroireNonPalindrome () {
+    public function testMiroirNonPalindrome () {
 
         $verificateur = new Palindrome();
         foreach(self::INPUTS["autres"] as $data){
             $resultat = $verificateur->renverser($data);
 
             $this->assertEquals($resultat, strrev($data));
+        }
+    }
+
+     /*
+    Quand c'est une chaine
+    */
+    public function testMiroirChaine () {
+
+        foreach(self::INPUTS as $type){
+            foreach($type as $key => $data){
+
+                $verificateur = new Palindrome();
+                $resultat = $verificateur->renverser($data);
+                $this->assertEquals($resultat, strrev($data));
+            }
         }
     }
 }
