@@ -1,0 +1,15 @@
+{
+    "BienDit" : "Well said",
+    "Salutation" : {
+        "Bonjour_am":"Hello",
+        "Bonjour_pm":"Good afternoon",
+        "Bonjour_soir":"Good evening",
+        "Bonjour_nuit":"Good night"
+    },
+    "AuRevoir" : {
+        "AuRevoir_am":"Have a nice day",
+        "AuRevoir_pm":"See you soon",
+        "AuRevoir_soir":"Have a good evening",
+        "AuRevoir_nuit":"See you tomorrow"
+    }
+}
