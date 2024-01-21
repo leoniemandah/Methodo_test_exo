@@ -13,13 +13,12 @@ use User\MethodoTestExo\App\Domaine\Temps\Soir;
 use User\MethodoTestExo\App\Domaine\Temps\Soiree;
 use User\MethodoTestExo\App\Domaine\Temps\MomentInconnu;
 use User\MethodoTestExo\App\Domaine\Temps\MomentDeLaJournee;
-use User\MethodoTestExo\Tests\Matchers\AyantPourPremiereLigne;
-use User\MethodoTestExo\Tests\Matchers\AyantPourDerniereLigne;
+use User\MethodoTestExo\Tests\Matchers\PremiereLigne;
+use User\MethodoTestExo\Tests\Matchers\DerniereLigne;
 
-class TestsVerificateurPalindrome extends TestCase
+class PalindromeTest extends TestCase
 {
-    //inputs
-    
+   
     const INPUTS = array("palindromes" => array("radar", "abba"),
                     "autres" => array("test", "palindrome"));
     const MOMENTS_SALUTATIONS = array(
@@ -124,7 +123,7 @@ class TestsVerificateurPalindrome extends TestCase
             foreach(self::INPUTS as $type){
                 foreach($type as $key => $data){
                     
-                    $contrainte = new AyantPourPremiereLigne(
+                    $contrainte = new PremiereLigne(
                         $verificateur
                                     ->ayantCommeLangue($langueStub)
                                     ->AyantPourMomentDeLaJournee($moment)
@@ -133,7 +132,7 @@ class TestsVerificateurPalindrome extends TestCase
                     
                     $this->assertThat($correction, $contrainte);
 
-                    $contrainte = new AyantPourPremiereLigne(
+                    $contrainte = new PremiereLigne(
                         $verificateur
                                     ->ayantCommeLangue($langueFr)
                                     ->AyantPourMomentDeLaJournee($moment)
@@ -161,7 +160,7 @@ class TestsVerificateurPalindrome extends TestCase
             $correction = Langue::getInstance()->setLanguageFile('fr.json')->getLanguage()->AuRevoir->$moment_type;
             foreach(self::INPUTS as $type){
                 foreach($type as $key => $data){
-                    $contrainte = new AyantPourDerniereLigne(
+                    $contrainte = new DerniereLigne(
                         $verificateur
                                     ->ayantCommeLangue($langueFr)
                                     ->AyantPourMomentDeLaJournee($moment)

@@ -8,7 +8,6 @@ use User\MethodoTestExo\App\Domaine\Langues\LangueFrancaise;
 use User\MethodoTestExo\App\Domaine\Temps\MomentInconnu; 
 
  
-
 class VerificateurPalindromeBuilder { 
 
     private $langue; 
@@ -21,7 +20,6 @@ class VerificateurPalindromeBuilder {
 
     }  
 
- 
 
     public static function parDefault () { 
 
