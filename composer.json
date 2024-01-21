@@ -1,4 +1,16 @@
-{
+ {   
+    "name": "user/methodo_test_exo",
+    "autoload": {
+        "psr-4": {
+            "User\\MethodoTestExo\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andjiby-Mandah",
+            "email": "exodemandah@gmail.com"
+        }
+    ],
     "require": {
         "phpunit/phpunit": "9.6"
     }
