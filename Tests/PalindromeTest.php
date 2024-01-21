@@ -60,4 +60,20 @@ class PalindromeTest extends TestCase
             $this->assertEquals($resultat, $correction);
         }
     }
+
+     /*
+        On renvoie bonjour
+    */
+    public function testBonjour () {
+
+        $verificateur = new Palindrome();
+        foreach(self::INPUTS as $type){
+            foreach($type as $key => $data){
+                $resultat = $verificateur->verifier($data);
+                $res_arr = explode(PHP_EOL, $resultat);
+                $correction = "Bonjour";
+                $this->assertEquals($res_arr[0], $correction);
+            }
+        }
+    }
 }

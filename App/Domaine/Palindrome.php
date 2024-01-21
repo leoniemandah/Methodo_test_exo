@@ -5,6 +5,7 @@ namespace User\MethodoTestExo;
 class Palindrome {
 
     const BIENDIT = "Bien dit";
+    const BONJOUR = "Bonjour";
 
     public function renverser ($str) {
 
@@ -20,7 +21,7 @@ class Palindrome {
     }
 
     public function verifier ($input){
-        return $this->renverser($input) . PHP_EOL . $this::BIENDIT. PHP_EOL;
+        return $this::BONJOUR . PHP_EOL . $this->renverser($input) . PHP_EOL . $this::BIENDIT. PHP_EOL;
     }
 
 } 
