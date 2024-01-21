@@ -7,7 +7,7 @@ class Palindrome {
     const BIENDIT = "Bien dit";
 
     public function renverser ($input) {
-        return $input;
+        return strrev($input);
     }
 
     public function epilog ($input){
