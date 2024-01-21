@@ -2,6 +2,7 @@
 
 namespace User\MethodoTestExo;
 use PHPUnit\Framework\TestCase;
+use User\MethodoTestExo\langues\Langue;
 
 class PalindromeTest extends TestCase
 {
@@ -76,23 +77,6 @@ class PalindromeTest extends TestCase
             }
         }
     }
-
-    /*
-     On renvoie non palindrome et non bien dit
-    */
-    public function testNonPalindromeNonBienDit () {
-
-        $verificateur = new Palindrome();
-        foreach(self::INPUTS["autres"] as $data){
-            $resultat = $verificateur->verifier($data);
-        }
-         $res_len = strlen($resultat);
-         $correction = strlen($verificateur::BONJOUR . PHP_EOL);
-         $correction += strlen($data . PHP_EOL); 
-         $this->assertEquals($res_len, $correction);
-        
-    }
-
     
     /*
      On renvoie Aurevoir
@@ -108,5 +92,42 @@ class PalindromeTest extends TestCase
             $this->assertEquals($res_arr[count($res_arr)-2], $correction);
             }
         }
+    }  
+
+    /*
+    On renvoie bien dit en français
+    */
+    public function testBienDit_french (){
+
+        $langueInstance = Langue::getInstance();
+
+        $langueInstance->setFile('fr.json');
+        $expressions = $langueInstance->getData();
+        $verificateur = new Palindrome();
+        foreach(self::INPUTS['palindromes'] as $data){
+            $resultat = $verificateur->verifier($data);
+            $res_arr = explode(PHP_EOL, $resultat);
+            $correction = $expressions->BienDit;
+            $this->assertEquals($correction, $res_arr[2]);
+            $this->assertEquals(strrev($data), $res_arr[1]);
+
+        }
+    }   
+    /*
+      QUAND l'expression renvoyée est conforme à la langue choisit
+    */
+    public function testBienDitDesLangues (){
+
+        $langueInstance = Langue::getInstance();
+
+        $langueInstance->setFile('fr.json');
+        $expressions = $langueInstance->getData();
+
+        $this->assertEquals("Bien dit", $expressions->BienDit);
+
+
+        $langueInstance->setFile('en.json');
+        $expressions = $langueInstance->getData();
+        $this->assertEquals("Well said", $expressions->BienDit);
     }  
 }

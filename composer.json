@@ -2,7 +2,8 @@
     "name": "user/methodo_test_exo",
     "autoload": {
         "psr-4": {
-            "User\\MethodoTestExo\\": "app/"
+            "User\\MethodoTestExo\\": "app/",
+            "User\\MethodoTestExo\\langues": "app/langues"
         }
     },
     "authors": [

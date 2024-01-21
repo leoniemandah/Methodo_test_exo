@@ -1,6 +1,7 @@
 <?php
 
 namespace User\MethodoTestExo;
+use User\MethodoTestExo\App\langues\Langue;
 
 class Palindrome {
 
@@ -22,11 +23,14 @@ class Palindrome {
     }
 
     public function verifier ($input){
+        $langueInstance = Langue::getInstance();
+
+        $expressions = $langueInstance->getData();
         $resultat = $this::BONJOUR . PHP_EOL ;
         $reversed = $this->renverser($input);
         $resultat .= $reversed . PHP_EOL ;
         if ($reversed == $input){
-            $resultat .= $this::BIENDIT. PHP_EOL;
+            $resultat .= $expressions->BienDit . PHP_EOL;
         }
 
         $resultat .= $this::AUREVOIR. PHP_EOL;
