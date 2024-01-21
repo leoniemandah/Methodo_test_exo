@@ -11,7 +11,7 @@ class PalindromeTest extends TestCase
     /*
      Quand ce n'est pas un palindrome
     */
-    public function testMiroireDePalindrome () {
+    public function testMiroirPalindrome () {
 
         $verificateur = new Palindrome();
         foreach(self::INPUTS["palindromes"] as $data){
@@ -23,7 +23,7 @@ class PalindromeTest extends TestCase
     /*
     Quand ce n'est pas un palindrome
     */
-    public function testMiroireDeNonPalindrome () {
+    public function testMiroireNonPalindrome () {
 
         $verificateur = new Palindrome();
         foreach(self::INPUTS["autres"] as $data){
