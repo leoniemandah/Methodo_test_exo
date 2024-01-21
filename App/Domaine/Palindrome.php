@@ -6,6 +6,7 @@ class Palindrome {
 
     const BIENDIT = "Bien dit";
     const BONJOUR = "Bonjour";
+    const AUREVOIR = "Au revoir";
 
     public function renverser ($str) {
 
@@ -27,6 +28,8 @@ class Palindrome {
         if ($reversed == $input){
             $resultat .= $this::BIENDIT. PHP_EOL;
         }
+
+        $resultat .= $this::AUREVOIR. PHP_EOL;
         return $resultat ;
      }
 } 
