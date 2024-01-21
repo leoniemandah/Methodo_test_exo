@@ -19,8 +19,8 @@ class Palindrome {
         return $newstr;
     }
 
-    public function epilog ($input){
-        return $this->renverser($input) . PHP_EOL . $this::BIENDIT;
+    public function verifier ($input){
+        return $this->renverser($input) . PHP_EOL . $this::BIENDIT. PHP_EOL;
     }
 
 } 

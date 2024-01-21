@@ -47,4 +47,17 @@ class PalindromeTest extends TestCase
             }
         }
     }
+
+    /*
+        On renvoie bien dit
+    */
+    public function testBienDit () {
+
+        $verificateur = new Palindrome();
+        foreach(self::INPUTS["palindromes"] as  $data){
+            $resultat = $verificateur->verifier($data);
+            $correction = strrev($data) . PHP_EOL . "Bien dit" . PHP_EOL;
+            $this->assertEquals($resultat, $correction);
+        }
+    }
 }
