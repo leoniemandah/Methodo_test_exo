@@ -61,8 +61,8 @@ class PalindromeTest extends TestCase
         }
     }
 
-     /*
-        On renvoie bonjour
+    /*
+     On renvoie bonjour
     */
     public function testBonjour () {
 
@@ -75,5 +75,21 @@ class PalindromeTest extends TestCase
                 $this->assertEquals($res_arr[0], $correction);
             }
         }
+    }
+
+    /*
+     On renvoie non palindrome et non bien dit
+    */
+    public function testNonPalindromeNonBienDit () {
+
+        $verificateur = new Palindrome();
+        foreach(self::INPUTS["autres"] as $data){
+            $resultat = $verificateur->verifier($data);
+        }
+         $res_len = strlen($resultat);
+         $correction = strlen($verificateur::BONJOUR . PHP_EOL);
+         $correction += strlen($data . PHP_EOL); 
+         $this->assertEquals($res_len, $correction);
+        
     }
 }
