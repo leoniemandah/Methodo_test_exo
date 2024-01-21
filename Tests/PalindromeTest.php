@@ -2,7 +2,7 @@
 
 namespace User\MethodoTestExo;
 use PHPUnit\Framework\TestCase;
-use User\MethodoTestExo\langues\Langue;
+use User\MethodoTestExo\App\langues\Langue;
 
 class PalindromeTest extends TestCase
 {
@@ -130,4 +130,21 @@ class PalindromeTest extends TestCase
         $expressions = $langueInstance->getData();
         $this->assertEquals("Well said", $expressions->BienDit);
     }  
+
+    /*
+    non palindrome non bien dit en langue
+    */
+    public function testNonPalindromeNonBienDit () {
+
+        $verificateur = new Palindrome();
+        foreach(self::INPUTS["autres"] as $data){
+                $resultat = $verificateur->verifier($data);
+                $res_len = strlen($resultat);
+                $correction = strlen($verificateur::BONJOUR . PHP_EOL);
+                $correction += strlen($data . PHP_EOL);
+                $correction += strlen($verificateur::AUREVOIR . PHP_EOL);
+                $this->assertEquals($res_len, $correction);
+        }  
+    }
+
 }
