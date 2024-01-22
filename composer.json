@@ -3,7 +3,7 @@
     "autoload": {
         "psr-4": {
             "User\\MethodoTestExo\\": "app/",
-            "User\\MethodoTestExo\\langues": "app/langues",
+            "User\\MethodoTestExo\\langues": "app/langues/",
             "User\\MethodoTestExo\\App\\Domaine\\Langues\\": "App/Domaine/Langues/",
             "User\\MethodoTestExo\\App\\Domaine\\Temps\\": "App/Domaine/Temps/",
             "User\\MethodoTestExo\\App\\Domaine\\": "App/Domaine/",
