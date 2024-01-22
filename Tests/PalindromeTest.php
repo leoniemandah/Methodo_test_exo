@@ -3,6 +3,7 @@
 namespace User\MethodoTestExo\Tests;
 use PHPUnit\Framework\TestCase;
 
+use User\MethodoTestExo\App\Domaine\Palindrome;
 use User\MethodoTestExo\Tests\Utilities\VerificateurPalindromeBuilder;
 use User\MethodoTestExo\App\Domaine\Langues\LangueFrancaise;
 use User\MethodoTestExo\App\Domaine\Langues\LangueAnglaise;

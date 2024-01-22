@@ -1,6 +1,6 @@
 <?php
 
-namespace User\MethodoTestExo;
+namespace User\MethodoTestExo\App\Domaine;
 use User\MethodoTestExo\App\Domaine\Langues\Langues;
 
 class Palindrome {
